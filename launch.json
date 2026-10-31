@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "ConditionalsImd",
+    "name": "ConditionalsImd",
+    "symbol": "COND",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 7000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0xee2aaa315cf7ed169f93148d30d24af9318dbb66"
+  },
+  "notes": "ConditionalsImd (COND) is a fixed-supply OpenZeppelin v5.1.0 ERC-20 with no constructor arguments. Its constructor mints the whole supply of 1,000,000,000 COND (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which at launch is the ProjectFactory; nothing else mints, so the supply can never grow. Transfers are plain: no fee, tax, burn, cooldown, limit or hook, so the factory's transfer to the MerkleDistributor, distributor claims, the single-sided pool seed through the Uniswap v4 PoolManager and swaps either way all move exactly the amount named. The token has no owner, admin, pause, blacklist, freeze, seize, burnFrom, mint or upgrade path, and its runtime has no DELEGATECALL, CALLCODE or SELFDESTRUCT. There are no application contracts and no initialization calls. The pool pairs COND with IMD (0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7) at the launch policy's 1.25% fee with tick spacing 60; initialPrice is provenance only, since the deployer derives the opening price from economics.initialMarketCapWei (2,500 IMD for the whole supply) and totalSupply. 70% of the supply seeds the pool and the remaining 20% of the requester's share goes to 0xee2aaa315cf7ed169f93148d30d24af9318dbb66."
+}
